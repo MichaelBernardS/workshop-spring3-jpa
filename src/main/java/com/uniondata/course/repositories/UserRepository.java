@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.uniondata.course.entities.User;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long> { // Neste caso não precisa colocar o annotation repository, pois já está herdando o jpaRepository que já está registrado como um componente do Spring;
 }
 
 // Não há uma implementação para esta interface, pois o próprio Spring já tem uma implementação padrão;
