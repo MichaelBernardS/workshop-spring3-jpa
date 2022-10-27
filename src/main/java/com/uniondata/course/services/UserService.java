@@ -15,7 +15,7 @@ public class UserService {
 	@Autowired
 	private UserRepository repository;
 	
-	public List<User> findAll() { // OPeração na camada de serviço, que repassa a chamada para o repository.findAll;
+	public List<User> findAll() { // Operação na camada de serviço, que repassa a chamada para o repository.findAll;
 		return repository.findAll();
 	}
 	

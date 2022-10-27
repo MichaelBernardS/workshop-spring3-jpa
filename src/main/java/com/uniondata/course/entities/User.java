@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,6 +28,7 @@ public class User implements Serializable {
 	private String phone;
 	private String password;
 	
+	@JsonIgnore // Necessário colocar essa Annotation para o Jackson não acusar um looping e ficar chamando um cliente, contendo um pedido, e vice e versa, infinitamente;
 	@OneToMany(mappedBy = "client") // Annotation para indicar um para muitos, mapeado pelo atributo client do Order; 
 	private List<Order> orders = new ArrayList<>();
 	
