@@ -5,6 +5,7 @@ import java.time.Instant;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.uniondata.course.entities.enums.OrderStatus;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,6 +28,8 @@ public class Order implements Serializable {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
 	private Instant moment;
 	
+	private Integer orderStatus; // Mudado pra Integer, para dizer explicitamente que estamos gravando no BD um numero inteiro;
+	
 	@ManyToOne // Pro JPA saber que é uma chave estrangeira no BD; Muitos para um; Mtos pedidos para um cliente;
 	@JoinColumn(name = "client_id") // Nome da chave estrangeira que vai ter la no BD;
 	private User client;
@@ -34,9 +37,10 @@ public class Order implements Serializable {
 	public Order() {
 	}
 
-	public Order(Long id, Instant moment, User client) {
+	public Order(Long id, Instant moment, OrderStatus orderStatus, User client) {
 		this.id = id;
 		this.moment = moment;
+		setOrderStatus(orderStatus);
 		this.client = client;
 	}
 
@@ -54,6 +58,16 @@ public class Order implements Serializable {
 
 	public void setMoment(Instant moment) {
 		this.moment = moment;
+	}
+
+	public OrderStatus getOrderStatus() {
+		return OrderStatus.valueOf(orderStatus); // Pegando o numero inteiro interno da classe e convertendo ele pra OrderStatus através do método valueOf;
+	}
+
+	public void setOrderStatus(OrderStatus orderStatus) {
+		if (orderStatus != null) { // Testando pois caso o programador passa o valor nulo pra construir o objeto;
+			this.orderStatus = orderStatus.getCode(); // Processo inverso, recebendo um OrderStatus e guardando internamente um número inteiro; Para pegar o número inteiro correspondente ao OrderStatus, basta chamar o getCode que retorna este código;
+		}
 	}
 
 	public User getClient() {
