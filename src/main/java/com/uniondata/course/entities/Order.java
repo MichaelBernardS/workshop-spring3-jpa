@@ -31,7 +31,7 @@ public class Order implements Serializable {
 	private Integer orderStatus; // Mudado pra Integer, para dizer explicitamente que estamos gravando no BD um numero inteiro;
 	
 	@ManyToOne // Pro JPA saber que é uma chave estrangeira no BD; Muitos para um; Mtos pedidos para um cliente;
-	@JoinColumn(name = "client_id") // Nome da chave estrangeira que vai ter la no BD;
+	@JoinColumn(name = "client_id") // Nome da chave estrangeira (client_id) que vai conter o id do usuário associado ao pedido no BD;
 	private User client;
 	
 	public Order() {

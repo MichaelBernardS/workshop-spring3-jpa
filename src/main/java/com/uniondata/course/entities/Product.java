@@ -9,15 +9,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "tb_product")
 public class Product implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -25,10 +27,13 @@ public class Product implements Serializable {
 	private String description;
 	private Double price;
 	private String imgUrl;
-	
-	@Transient // Impede que o JPA tente interpretar isso;
-	private Set<Category> categories = new HashSet<>(); // Usado o conjunto Set para garantir que não seja repetido um produto da mesma categoria; Instanciado para a coleção não começar valendo nula, ela tem que começar vazia;
-	
+
+	@ManyToMany
+	@JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_Id"), inverseJoinColumns = @JoinColumn(name = "category_id")) // Mapeamento para transformar as coleções das duas classes na tabela de associação no modelo relacional; 
+	private Set<Category> categories = new HashSet<>(); // Usado o conjunto Set para garantir que não seja repetido um
+														// produto da mesma categoria; Instanciado para a coleção não
+														// começar valendo nula, ela tem que começar vazia;
+
 	public Product() {
 	}
 
