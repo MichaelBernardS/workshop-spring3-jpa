@@ -64,6 +64,10 @@ public class OrderItem implements Serializable {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	
+	public Double getSubTotal() { // No Java EE o que vale é o Get, então para aparecer no resultado, no json, tem q colocar como get;
+		return price * quantity;
+	}
 
 	@Override
 	public int hashCode() {
