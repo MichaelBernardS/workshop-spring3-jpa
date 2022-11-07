@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Profile;
 import com.uniondata.course.entities.Category;
 import com.uniondata.course.entities.Order;
 import com.uniondata.course.entities.OrderItem;
+import com.uniondata.course.entities.Payment;
 import com.uniondata.course.entities.Product;
 import com.uniondata.course.entities.User;
 import com.uniondata.course.entities.enums.OrderStatus;
@@ -81,6 +82,9 @@ public class TestConfig implements CommandLineRunner { // CommandLineRunner - Ma
 		
 		orderItemRepository.saveAll(Arrays.asList(oi1, oi2, oi3, oi4));
 		
+		Payment pay1 = new Payment(null, Instant.parse("2019-06-20T21:53:07Z"), o1);
+		o1.setPayment(pay1); // Associação de mão dupla em memória; Não usaremos o repository do proprio objeto para salvar um objeto dependente numa relação um para um;
+		orderRepository.save(o1); // JPA vai salvar no BD este pagamento a este pedido, funciona desta forma a relação de associação do JPA;
 	}
 }
 
