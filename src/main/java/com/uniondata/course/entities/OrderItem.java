@@ -40,7 +40,7 @@ public class OrderItem implements Serializable {
 	public void setOrder(Order order) {
 		id.setOrder(order); // Informando um pedido, e o método vai lá no id (OrdemItemPK) e jogar o pedido lá dentro;
 	}
-	
+
 	public Product getProduct() {
 		return id.getProduct();
 	}
