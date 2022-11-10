@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -47,6 +48,12 @@ public class UserResource {
 	public ResponseEntity<Void> delete(@PathVariable Long id) { // Void pois não vai retornar nenhum corpo, somente vai deletar;
 		service.delete(id);
 		return ResponseEntity.noContent().build(); // noContent() é uma resposta vazia, e o código http de uma resposta que não tem conteúdo é o 204, onde ele já irá tratar também;
+	}
+	
+	@PutMapping(value = "/{id}")  // Método do tipo Put do http para atualizar algum dado no BD;
+	public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User obj) { // Implementação básica de uma atualização de um usuário;
+		obj = service.update(id,  obj);
+		return ResponseEntity.ok().body(obj);
 	}
 }
 

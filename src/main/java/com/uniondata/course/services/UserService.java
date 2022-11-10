@@ -31,4 +31,16 @@ public class UserService {
 	public void delete(Long id) { // Operação para deletar um usuário do BD; Passando o id do usuário para deletar;
 		repository.deleteById(id);
 	}
+	
+	public User update(Long id, User obj) { // Operação para atualizar um usuário no BD; Passando o id para saber qual usuário vai atualizar, e o objeto User contendo os dados para serem atualizados;
+		User entity = repository.getReferenceById(id); // Instancia um usuário, porém não vai pro BD ainda, só vai deixar um objeto monitorado pelo JPA, para trabalhar com ele, e em seguida, pode efetuar alguma operação com o BD; Diferente do findById que pega o objeto e trás p nós, já o referenceId prepara o objeto p mexer e dps efetuar uma operação c o BD, é mais eficiente desta forma;
+		updateData(entity, obj); // Atualizar os dados do entity, baseado nos dados que chegaram no obj;
+		return repository.save(entity);
+	}
+
+	private void updateData(User entity, User obj) {
+		entity.setName(obj.getName());
+		entity.setEmail(obj.getEmail());
+		entity.setPhone(obj.getPhone());
+	}
 }
