@@ -27,4 +27,8 @@ public class UserService {
 	public User insert(User obj) { // Operação para salvar um usuário no BD; Operação retorna o usuário salvo;
 		return repository.save(obj); // Save por padrão já retorna o objeto salvo;
 	}
+	
+	public void delete(Long id) { // Operação para deletar um usuário do BD; Passando o id do usuário para deletar;
+		repository.deleteById(id);
+	}
 }
