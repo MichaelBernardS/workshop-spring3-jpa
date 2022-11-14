@@ -4,10 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import com.uniondata.course.entities.User;
 import com.uniondata.course.repositories.UserRepository;
+import com.uniondata.course.services.exceptions.DatabaseException;
 import com.uniondata.course.services.exceptions.ResourceNotFoundException;
 
 @Service
@@ -30,7 +33,13 @@ public class UserService {
 	}
 	
 	public void delete(Long id) { // Operação para deletar um usuário do BD; Passando o id do usuário para deletar;
-		repository.deleteById(id);
+		try {
+			repository.deleteById(id);
+		} catch (EmptyResultDataAccessException e) { // Tratando a exceção específica que dá ao tentar deletar um usuário que não tem no BD; 
+			throw new ResourceNotFoundException(id); // Lançando a exceção que criamos;
+		} catch (DataIntegrityViolationException e) {
+			throw new DatabaseException(e.getMessage()); // Lançando uma exceção da nossa camada de serviço, que criamos para tratar específicamente este tipo de erro; Para dar o erro 404 "correto" ao apagar um usuário que há pedidos vinculados a ele no BD;
+		}
 	}
 	
 	public User update(Long id, User obj) { // Operação para atualizar um usuário no BD; Passando o id para saber qual usuário vai atualizar, e o objeto User contendo os dados para serem atualizados;
