@@ -28,8 +28,8 @@ Este projeto é uma aplicação backend utilizando o SpringBoot, onde utilizamos
 # Como executar o projeto
 
 ## Back end
-Pré-requisitos: Java 17
-Spring Tool Suite 4 - STS Eclipse IDE
+- Pré-requisitos: Java 17
+- Spring Tool Suite 4 - STS Eclipse IDE
 
 ```bash
 # clonar repositório
