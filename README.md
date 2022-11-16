@@ -5,8 +5,6 @@
 
 Este projeto é uma aplicação backend utilizando o SpringBoot, onde utilizamos algumas ferramentas para a manipulação do mesmo. O projeto é estruturado a partir de algumas camadas lógicas, que visa realizar um CRUD em um estoque de produtos associado aos seus pedidos. 
 
-Utilizamos o Postman como testador de requisições, o banco h2 que é um banco de dados em memória do Java, e o mesmo foi feito através da IDE Spring Tool Suite 4 - STS Eclipse
-
 ## Camada lógica
 ![Web 1](https://github.com/MichaelBernardS/Assets/blob/main/Camadas%20l%C3%B3gicas.png)
 
@@ -24,13 +22,14 @@ Utilizamos o Postman como testador de requisições, o banco h2 que é um banco 
 - Maven
 
 ## Implantação em produção
-- Banco de dados h2
-- Postman
+- Banco de dados H2 - Banco de dados em memória do Java
+- Postman - Testador de requisições
 
 # Como executar o projeto
 
 ## Back end
 Pré-requisitos: Java 17
+Spring Tool Suite 4 - STS Eclipse IDE
 
 ```bash
 # clonar repositório
