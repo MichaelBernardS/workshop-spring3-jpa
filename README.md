@@ -15,3 +15,20 @@ Utilizamos o Postman como testador de requisições, o banco h2 que é um banco 
 
 ## Camada lógica
 ![Web 2](https://github.com/MichaelBernardS/Assets/blob/main/Camadas%20l%C3%B3gicas.png)
+
+# Tecnologias utilizadas
+## Back end
+- Java
+- Spring Boot
+- JPA / Hibernate
+- Maven
+
+## Implantação em produção
+- Banco de dados h2
+- Postman
+
+# Como executar o projeto
+
+## Back end
+Pré-requisitos: Java 17
+
