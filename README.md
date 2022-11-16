@@ -7,14 +7,14 @@ Este projeto é uma aplicação backend utilizando o SpringBoot, onde utilizamos
 
 Utilizamos o Postman como testador de requisições, o banco h2 que é um banco de dados em memória do Java, e o mesmo foi feito através da IDE Spring Tool Suite 4 - STS Eclipse
 
+## Camada lógica
+![Web 1](https://github.com/MichaelBernardS/Assets/blob/main/Camadas%20l%C3%B3gicas.png)
+
 ## Modelo de domínio
-![Web 1](https://github.com/MichaelBernardS/Assets/blob/main/Modelo%20de%20dom%C3%ADnio.png)
+![Web 2](https://github.com/MichaelBernardS/Assets/blob/main/Modelo%20de%20dom%C3%ADnio.png)
 
 ## Associação de objetos
-![Web 2](https://github.com/MichaelBernardS/Assets/blob/main/Associa%C3%A7%C3%A3o%20dos%20objetos.png)
-
-## Camada lógica
-![Web 2](https://github.com/MichaelBernardS/Assets/blob/main/Camadas%20l%C3%B3gicas.png)
+![Web 3](https://github.com/MichaelBernardS/Assets/blob/main/Associa%C3%A7%C3%A3o%20dos%20objetos.png)
 
 # Tecnologias utilizadas
 ## Back end
@@ -32,3 +32,13 @@ Utilizamos o Postman como testador de requisições, o banco h2 que é um banco 
 ## Back end
 Pré-requisitos: Java 17
 
+```bash
+# clonar repositório
+git clone https://github.com/https://github.com/MichaelBernardS/workshop-spring3-jpa.git
+```
+
+# Autor
+
+Michael Bernard Santos
+
+https://www.linkedin.com/in/michael-bernard-santos/
