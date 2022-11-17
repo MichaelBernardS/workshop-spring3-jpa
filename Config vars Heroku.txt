@@ -1,0 +1,11 @@
+Config vars: postgres://ininrnyzkvzxdl:ab094fca40020a770b3ec15317649d0f6d396adae59e654bda7818e891b39953@ec2-54-174-31-7.compute-1.amazonaws.com:5432/d3pi71snhfanbp
+
+User: ininrnyzkvzxdl
+
+Password: ab094fca40020a770b3ec15317649d0f6d396adae59e654bda7818e891b39953
+
+Server: ec2-54-174-31-7.compute-1.amazonaws.com
+
+Port: 5432
+
+Database: d3pi71snhfanbp
