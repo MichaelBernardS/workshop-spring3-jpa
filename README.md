@@ -22,6 +22,10 @@ Este projeto é uma aplicação backend utilizando o SpringBoot, onde utilizamos
 - Maven
 
 ## Implantação em produção
+- Back end: Heroku
+- Banco de dados: Postgresql
+
+## Implantação de testes
 - Banco de dados H2 - Banco de dados em memória do Java
 - Postman - Testador de requisições
 
