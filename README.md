@@ -9,7 +9,7 @@ Este projeto é uma aplicação backend utilizando o SpringBoot, onde utilizamos
 ![Web 1](https://github.com/MichaelBernardS/Assets/blob/main/Camadas%20l%C3%B3gicas.png)
 
 ## Modelo de domínio
-![Web 2](https://github.com/MichaelBernardS/Assets/blob/main/Modelo%20de%20dom%C3%ADnio.png)
+![Web 2](https://github.com/MichaelBernardS/Assets/blob/main/Modelo%20de%20dom%C3%ADnio%20Spring-JPA-Hibernate.png)
 
 ## Associação de objetos
 ![Web 3](https://github.com/MichaelBernardS/Assets/blob/main/Associa%C3%A7%C3%A3o%20dos%20objetos.png)
@@ -37,7 +37,7 @@ Este projeto é uma aplicação backend utilizando o SpringBoot, onde utilizamos
 
 ```bash
 # clonar repositório
-git clone https://github.com/https://github.com/MichaelBernardS/workshop-spring3-jpa.git
+git clone https://github.com/MichaelBernardS/workshop-spring3-jpa.git
 ```
 
 # Autor
